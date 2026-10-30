@@ -886,7 +886,23 @@
         *, *::before, *::after { transition-duration: .01ms !important; transition-delay: 0ms !important; animation: none !important; }
       }
     </style>
-  </head>
+  
+<style>
+.stack3d{perspective:1000px}
+.stack3d-grid{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:18px}
+.tech-cube{width:135px;height:135px;animation:float3d 3.2s ease-in-out infinite;display:flex;align-items:center;justify-content:center;text-align:center;font-weight:700;cursor:pointer;border:1px solid rgba(245,239,232,.25);border-radius:14px;background:linear-gradient(145deg,#1a1a1a,#070606);box-shadow:0 12px 24px rgba(0,0,0,.45);transform:rotateX(22deg) rotateY(-22deg);transition:transform .25s ease,box-shadow .25s ease}
+.tech-cube:hover,.tech-cube.active{transform:rotateX(0deg) rotateY(0deg) translateY(-14px) scale(1.14);animation:none;box-shadow:0 20px 32px rgba(0,0,0,.6);border-color:#ef2d2d}
+#tech-desc{margin-top:18px;min-height:48px;text-align:center;color:#aaa19b}
+</style>
+<style>.project{transform-style:preserve-3d}</style>
+<style>
+@keyframes float3d{0%,100%{transform:rotateX(22deg) rotateY(-22deg) translateY(0)}50%{transform:rotateX(22deg) rotateY(-22deg) translateY(-12px)}}
+.tech-cube{box-shadow:0 18px 34px rgba(0,0,0,.6),0 4px 0 rgba(239,45,45,.35)!important}
+#hero-title{text-shadow:0 2px 0 #000,0 6px 0 rgba(0,0,0,.6),0 14px 28px rgba(0,0,0,.7)!important}
+
+
+</style>
+<style>.project img.project-photo{grid-column:1 / -1;width:100%;height:200px;object-fit:cover;border-radius:10px;margin-top:6px;transform:none!important;box-shadow:none!important}</style></head>
   <body>
     <div class="noise" aria-hidden="true"></div>
     <header class="topbar hero-mode">
@@ -948,31 +964,31 @@
             <h3 data-lang="p1Title">Base de données cabinet juridique</h3>
             <p data-lang="p1Text">Modèle relationnel, schéma SQL et documentation bilingue pour gérer les données d'un cabinet juridique.</p>
             <span class="arrow" aria-hidden="true">↗</span>
-          </a>
+          <img class="project-photo" src="sql-code.jpg" alt="Base de données SQL — cabinet juridique"></a>
           <article class="project">
             <span class="project-no">02</span>
             <h3 data-lang="p2Title">Laboratoire Active Directory</h3>
             <p data-lang="p2Text">Domaine Windows Server avec contrôleur de domaine, structure d'OU, utilisateurs, groupes de sécurité et politiques à déployer.</p>
             <span class="arrow" aria-hidden="true">→</span>
-          </article>
+          <img class="project-photo" src="ad-windows-server.png" alt="Active Directory — Windows Server 2025"></article>
           <article class="project">
             <span class="project-no">03</span>
             <h3 data-lang="p3Title">Homelab Proxmox</h3>
             <p data-lang="p3Text">Serveur HP ProLiant, stockage RAID et environnement de virtualisation pour apprendre l'administration système par la pratique.</p>
             <span class="arrow" aria-hidden="true">→</span>
-          </article>
+          <img class="project-photo" src="proxmox-dashboard.png" alt="Proxmox VE — tableau de bord des machines virtuelles"></article>
           <article class="project">
             <span class="project-no">04</span>
             <h3 data-lang="p4Title">Base de données — gestion des écoles</h3>
             <p data-lang="p4Text">Travail de groupe INF1096 : base de données pour la gestion d'un conseil scolaire et de ses écoles — modélisation relationnelle, normalisation, contraintes d'intégrité et script SQL complet.</p>
             <span class="arrow" aria-hidden="true">→</span>
-          </article>
+          <img class="project-photo" src="dbms-diagram.png" alt="Base de données — schéma et gestion des écoles"></article>
           <article class="project">
             <span class="project-no">05</span>
             <h3 data-lang="p5Title">Réseau Cisco — ACL, NAT, PAT &amp; VLAN</h3>
             <p data-lang="p5Text">Pratique sur équipement Cisco physique : listes de contrôle d'accès (ACL), traduction d'adresses NAT et PAT, architecture LAN / WAN et segmentation par VLAN pour sécuriser et organiser le réseau.</p>
             <span class="arrow" aria-hidden="true">→</span>
-          </article>
+          <img class="project-photo" src="cisco-switch.jpg" alt="Switch Cisco Catalyst 2960 — ACL, NAT, PAT et VLAN"></article>
         </div>
       </section>
 
@@ -991,7 +1007,25 @@
         </div>
       </section>
 
-      <section class="contact" id="contact" aria-labelledby="contact-title">
+      
+<section class="stack3d" aria-labelledby="stack3d-title" style="padding:40px 20px;text-align:center">
+<h2 id="stack3d-title" data-lang="stackTitle">Mes technologies</h2>
+<p style="color:#aaa19b" data-lang="stackNote">Clique sur une technologie pour voir où je l'ai utilisée.</p>
+<div class="stack3d-grid" id="stack3d-grid">
+<div class="tech-cube" data-desc-fr="Cisco — Routers C8200 et switches 2960, OSPF, VLAN, ACL, NAT et PAT sur équipement physique." data-desc-en="Cisco — C8200 routers and 2960 switches, OSPF, VLAN, ACL, NAT and PAT on physical equipment.">Cisco</div>
+<div class="tech-cube" data-desc-fr="Active Directory — Domaine techventures.local, contrôleur de domaine, OU, groupes et récupération après corruption." data-desc-en="Active Directory — techventures.local domain, domain controller, OUs, groups, and recovery after corruption.">Active Directory</div>
+<div class="tech-cube" data-desc-fr="Windows Server 2025 — Promotion DC, DNS, adressage statique, 3 serveurs en labo." data-desc-en="Windows Server 2025 — DC promotion, DNS, static addressing, 3 lab servers.">Windows Server</div>
+<div class="tech-cube" data-desc-fr="Proxmox VE 9.2 — Homelab sur HP ProLiant DL360 G6, RAID 5, VMs Ubuntu et Kali." data-desc-en="Proxmox VE 9.2 — Homelab on an HP ProLiant DL360 G6, RAID 5, Ubuntu and Kali VMs.">Proxmox</div>
+<div class="tech-cube" data-desc-fr="Linux — Administration Ubuntu Server et Kali, SSH par clés, documentation sur GitHub." data-desc-en="Linux — Ubuntu Server and Kali administration, SSH key access, documentation on GitHub.">Linux</div>
+<div class="tech-cube" data-desc-fr="Python &amp; MySQL — Applications orientées objet connectées à MySQL, bases cabinet juridique et écoles." data-desc-en="Python & MySQL — Object-oriented applications connected to MySQL, law-firm and school databases.">Python / MySQL</div>
+<div class="tech-cube" data-desc-fr="Angular — Labos INF1083, composants, formulaires et application NexusLab en TypeScript." data-desc-en="Angular — INF1083 labs, components, forms, and the NexusLab app in TypeScript.">Angular</div>
+<div class="tech-cube" data-desc-fr="NativeScript — Applications mobiles, configuration de l'environnement de développement et émulateur Android." data-desc-en="NativeScript — Mobile apps, development environment setup, and Android emulator.">NativeScript</div>
+<div class="tech-cube" data-desc-fr="PowerShell — Administration Windows, dépannage et automatisation de base." data-desc-en="PowerShell — Windows administration, troubleshooting, and basic automation.">PowerShell</div>
+<div class="tech-cube" data-desc-fr="Help Desk — Support niveau 1, tickets, diagnostic méthodique, documentation des résolutions." data-desc-en="Help Desk — Level 1 support, tickets, methodical troubleshooting, documenting resolutions.">Help Desk</div>
+</div>
+<p id="tech-desc" data-lang="stackDesc">Clique sur une technologie ↑</p>
+</section>
+<section class="contact" id="contact" aria-labelledby="contact-title">
         <div class="contact-lead">
           <h2 id="contact-title" data-lang="contactTitle">Construisons quelque chose d'utile.</h2>
           <div class="contact-actions">
@@ -1019,7 +1053,7 @@
             p4Title: "Base de données — gestion des écoles", p4Text: "Travail de groupe INF1096 : base de données pour la gestion d'un conseil scolaire et de ses écoles — modélisation relationnelle, normalisation, contraintes d'intégrité et script SQL complet.",
             p5Title: "Réseau Cisco — ACL, NAT, PAT & VLAN", p5Text: "Pratique sur équipement Cisco physique : listes de contrôle d'accès (ACL), traduction d'adresses NAT et PAT, architecture LAN / WAN et segmentation par VLAN pour sécuriser et organiser le réseau.",
             skillsTitle: "Outils &<br>terrain", skillsNote: "Une base polyvalente pour le soutien TI, le développement junior et l'administration de réseaux.", skillDev: "Développement", skillData: "Données", skillNet: "Réseau", skillSys: "Systèmes", skillVirt: "Virtualisation", skillWeb: "Web & mobile",
-            contactTitle: "Construisons quelque chose d'utile.", seeWork: "Voir mes projets", github: "Voir sur GitHub", footer: "Développement · Réseaux · Infrastructure"
+            contactTitle: "Construisons quelque chose d'utile.", seeWork: "Voir mes projets", github: "Voir sur GitHub", footer: "Développement · Réseaux · Infrastructure", stackTitle: "Mes technologies", stackNote: "Clique sur une technologie pour voir où je l'ai utilisée.", stackDesc: "Clique sur une technologie ↑"
           },
           en: {
             available: "Available for new opportunities", navAbout: "About", navWork: "Work", navContact: "Contact",
@@ -1034,7 +1068,7 @@
             p4Title: "School management database", p4Text: "INF1096 group project: a database to manage a school board and its schools — relational modelling, normalization, integrity constraints and a complete SQL script.",
             p5Title: "Cisco networking — ACL, NAT, PAT & VLANs", p5Text: "Hands-on practice on physical Cisco equipment: access control lists (ACL), NAT and PAT address translation, LAN / WAN architecture and VLAN segmentation to secure and organize the network.",
             skillsTitle: "Tools &<br>practice", skillsNote: "A versatile foundation for IT support, junior development and network administration.", skillDev: "Development", skillData: "Data", skillNet: "Networking", skillSys: "Systems", skillVirt: "Virtualization", skillWeb: "Web & mobile",
-            contactTitle: "Let's build something useful.", seeWork: "See my work", github: "View on GitHub", footer: "Development · Networks · Infrastructure"
+            contactTitle: "Let's build something useful.", seeWork: "See my work", github: "View on GitHub", footer: "Development · Networks · Infrastructure", stackTitle: "My Tech Stack", stackNote: "Click a technology to see where I used it.", stackDesc: "Click a technology ↑"
           }
         };
         var buttons = document.querySelectorAll("[data-set-lang]");
@@ -1128,8 +1162,8 @@
                 var bounds = card.getBoundingClientRect();
                 var x = (event.clientX - bounds.left) / bounds.width;
                 var y = (event.clientY - bounds.top) / bounds.height;
-                card.style.setProperty("--tilt-x", ((.5 - y) * 5).toFixed(2) + "deg");
-                card.style.setProperty("--tilt-y", ((x - .5) * 6).toFixed(2) + "deg");
+                card.style.setProperty("--tilt-x", ((.5 - y) * 14).toFixed(2) + "deg");
+                card.style.setProperty("--tilt-y", ((x - .5) * 16).toFixed(2) + "deg");
                 card.style.setProperty("--mouse-x", (x * 100).toFixed(1) + "%");
                 card.style.setProperty("--mouse-y", (y * 100).toFixed(1) + "%");
               });
@@ -1145,5 +1179,32 @@
         }
       })();
     </script>
-  </body>
+  
+<script>
+(function(){
+  var cubes = document.querySelectorAll('.tech-cube');
+  var desc = document.getElementById('tech-desc');
+  if(!cubes.length || !desc) return;
+  function getDesc(c){
+    var lang = document.documentElement.lang || 'fr';
+    return c.getAttribute('data-desc-' + lang) || c.getAttribute('data-desc-fr');
+  }
+  cubes.forEach(function(c){
+    c.addEventListener('click', function(){
+      cubes.forEach(function(x){x.classList.remove('active')});
+      c.classList.add('active');
+      desc.textContent = getDesc(c);
+    });
+  });
+  document.querySelectorAll('[data-set-lang]').forEach(function(b){
+    b.addEventListener('click', function(){
+      window.setTimeout(function(){
+        var active = document.querySelector('.tech-cube.active');
+        if(active) desc.textContent = getDesc(active);
+      }, 150);
+    });
+  });
+})();
+</script>
+</body>
 </html>
